@@ -193,8 +193,24 @@ def get_shape():
     global shapes, shape_colors
  
     return Piece(5, 0, random.choice(shapes))
+
+
+def draw_text_atXY(text, size, color, surface ,x = play_width/2 ,  y = play_height/2 , isbold = True):
+    font = pygame.font.SysFont('comicsans', size, bold=isbold)
+    label = font.render(text, 1, color)
  
+    surface.blit(label, (top_left_x  + x - (label.get_width() / 2), (top_left_y + y- label.get_height()/2)  ))
  
+
+#this takes the y parameter as input to display contents at given y but x is the middle of the screen
+def draw_text_atY(text, size, color, surface , y = play_height/2 , isbold = True):
+    font = pygame.font.SysFont('comicsans', size, bold=isbold)
+    label = font.render(text, 1, color)
+ 
+    surface.blit(label, (top_left_x + play_width/2 - (label.get_width() / 2), (top_left_y + y- label.get_height()/2)  ))
+ 
+
+
 def draw_text_middle(text, size, color, surface):
     font = pygame.font.SysFont('comicsans', size, bold=True)
     label = font.render(text, 1, color)
@@ -368,7 +384,14 @@ def main_menu():
     run = True
     while run:
         win.fill((0,0,0))
-        draw_text_middle('Press any key to begin.', 60, (255, 255, 255), win)
+        draw_text_atY('Press any key to begin.', 60, (255, 255, 255), win , 100)
+        draw_text_atY('Instructions.', 30, (255, 255, 255), win , 150 ,True)
+        draw_text_atY('(up arrow key )== change of the shape', 20, (255, 255, 255), win , 180, False)
+        draw_text_atY('(left arrow key) == move block left by one unit', 20, (255, 255, 255), win , 200, False)
+        draw_text_atY('(right arrow key) == move block right by one unit', 20, (255, 255, 255), win , 220, False)
+        draw_text_atY('(down arrow key) == move block down by one unit', 20, (255, 255, 255), win , 240, False)
+        draw_text_atY('Version 2.0.0', 15, (255, 255, 255), win , 300, False)
+        
         pygame.display.update()
         for event in pygame.event.get():
             if event.type == pygame.QUIT:

@@ -1,4 +1,5 @@
 features.txt
 
 this version ie version 2.0 differs from version v1.0 as ::
->>this has abitliy to measure your scores and then display them
+>> this also has a function to display text at our desired locations (not used currently will be used in future versions)
+>> this has abitliy to measure your scores and then display them
