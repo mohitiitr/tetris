@@ -19,8 +19,8 @@ Voilaa!! game begins .I hope you all already know the rules , game uses arrow ke
 
 
 ! [image of version 2.5.3 mainmenu]
-(/images/mainmenu.png)
+(https://github.com/mohitiitr/tetris/tree/master/images/mainmenu.png)
 
 
 ! [image of version 2.5.3 game]
-(/images/game.png)
+(https://github.com/mohitiitr/tetris/tree/master/images/game.png)
