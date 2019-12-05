@@ -1,0 +1,17 @@
+details.txt
+
+this game has folllwing controls
+
+(up arrow key )== change of the shape
+(left arrow key) == move block left by one unit
+(right arrow key) == move block right by one unit
+(down arrow key) == move block down by one unit
+
+
+updates to be made in comming versions
+
+>>(objective 1) >> add scores option.
+
+>>(objective 2) >> add option to pause the game and then have options like NewGame , Continue and Quit.
+
+>>(objective 3) >> add option to same game state like scores you  have made till now , current borad state so that you have an option to conntinue from where you did left.
