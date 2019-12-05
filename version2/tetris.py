@@ -249,6 +249,7 @@ def clear_rows(grid, locked):
                 newKey = (x, y + inc)
                 locked[newKey] = locked.pop(key)
  
+    return inc 
  
 def draw_next_shape(shape, surface):
     font = pygame.font.SysFont('comicsans', 30)
@@ -287,6 +288,7 @@ def draw_window(surface):
  
 def main():
     global grid
+    score = 0
  
     locked_positions = {}  # (x,y):(255,0,0)
     grid = create_grid(locked_positions)
@@ -365,17 +367,18 @@ def main():
             change_piece = False
  
             # call four times to check for multiple clear rows
-            clear_rows(grid, locked_positions)
- 
+            score +=  clear_rows(grid, locked_positions)*10
+        
         draw_window(win)
         draw_next_shape(next_piece, win)
+        draw_text_atXY('Score : '+str(score), 40, (255, 255, 255), win ,play_width + 110,play_height/2 +50, False)
         pygame.display.update()
  
         # Check if user lost
         if check_lost(locked_positions):
             run = False
  
-    draw_text_middle("You Lost", 40, (255,255,255), win)
+    draw_text_middle("You Lost !!", 50, (255,255,255), win)
     pygame.display.update()
     pygame.time.delay(2000)
  
